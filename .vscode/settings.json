@@ -26,7 +26,19 @@
         "direct.h": "c",
         "filesystem": "c",
         "future": "c",
-        "raygui.h": "c"
+        "raygui.h": "c",
+        "atomic": "c",
+        "compare": "c",
+        "cstddef": "c",
+        "limits": "c",
+        "memory": "c",
+        "vector": "c",
+        "xmemory": "c",
+        "xstring": "c",
+        "store.h": "c",
+        "login.h": "c",
+        "sqlite3.h": "c",
+        "raylib.h": "c"
     },
     "cmake.configureOnOpen": false
 }
