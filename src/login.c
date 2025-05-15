@@ -1,7 +1,7 @@
 #include "login.h"
 
 #include "ui_style.h"
-
+#include <string.h>
 #include "raygui.h"
 
 #define USERNAME_MAX 32
@@ -48,7 +48,7 @@ void ui_login(GameData* g){
     bounds.y += TEXTBOX_HEIGHT + PADDING;
     char* butt_label =  is_create_account ? "Create account" : "Login";
     if(GuiButton(bounds,butt_label)){
-        //@TODO: Save to db
+        if(strlen(username) == 0 || strlen(mdp) == 0) {TraceLog(LOG_INFO, "Veuillez remplir les champs comme il faut!!!"); return;};
         g->state = MainMenu;
     }
     bounds.y += TEXTBOX_HEIGHT + PADDING;

@@ -10,6 +10,8 @@
 #include "login.h"
 #include "store.h"
 
+#include "DataBase.h"
+
 
 void game_preview_player(WinRect sub_rect,GameData* g){
     #define BUMP 16 + 1 
@@ -27,6 +29,11 @@ void game_preview_player(WinRect sub_rect,GameData* g){
     }
 }
 void game_init(GameData* g){
+
+    DataBaseStart(g);
+
+    DataBaseInitTables(g);
+
     InitWindow(g->win.w,g->win.h,"GoodGame™");
     SetTargetFPS(60);
 
@@ -85,6 +92,8 @@ void game_end(GameData* g){
     UnloadTexture(*g->img);
 
     CloseWindow();
+
+    DataBaseEnd(g);
 }
 
 #define NUM_ELEMENTS 4
